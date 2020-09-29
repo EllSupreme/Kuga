@@ -25,5 +25,5 @@ Kuga receives the order to create a server with a ServerGame, the ServerGame is 
 ## Developer
 - Supreme
 
-## Thinker
+## Name thinker
 - Idryld
