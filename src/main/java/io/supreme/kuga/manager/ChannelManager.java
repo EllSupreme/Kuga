@@ -10,6 +10,10 @@ import redis.clients.jedis.exceptions.JedisConnectionException;
 import java.io.Closeable;
 import java.io.IOException;
 
+/**
+ * Le but est :
+ * -> On demande la création d'un serverType -> serverReceive va recevoir l'ordre d'en crée avec le serverRequestManager.
+ */
 public class ChannelManager implements Closeable {
 
     private ServerDemandListener serverDemandListener;
