@@ -120,6 +120,14 @@
             <systemPath>${project.basedir}/libraries/spigot_server.jar</systemPath>
         </dependency>
 
+        <!-- Hikari -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.7.2</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- PlayPen -->
         <dependency>
             <groupId>playpen</groupId>
