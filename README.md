@@ -1,6 +1,19 @@
 # Kuga
 
+🦺 Kuga is currently under development, so it is updated regularly. Some functions may not be 100% functional. Thank you for your understanding.
+
 Kuga is an application allowing to manage servers.
+
+Server Version | Support
+---------------|--------
+1.8            |   ✔
+1.9            |   ✔
+1.10           |   ✔
+1.11           |   ✔
+1.12           |   ✔
+1.13           |   ✔
+1.14           |   ✔
+1.15           |   ✔
 
 ---
 
