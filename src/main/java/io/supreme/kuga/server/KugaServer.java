@@ -6,14 +6,16 @@ public class KugaServer {
 
     private int id;
 
+    private ServerGame serverGame;
     private int port, maxPlayers, currentPlayers;
     private String serverName, mapName;
 
     private List<String> properties;
 
-    public KugaServer(int id, int port, int maxPlayers, String serverName) {
+    public KugaServer(int id, int port, ServerGame serverGame, int maxPlayers, String serverName) {
         this.id = id;
         this.port = port;
+        this.serverGame = serverGame;
         this.maxPlayers = maxPlayers;
         this.serverName = serverName;
     }
@@ -32,6 +34,14 @@ public class KugaServer {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public ServerGame getServerGame() {
+        return serverGame;
+    }
+
+    public void setServerGame(ServerGame serverGame) {
+        this.serverGame = serverGame;
     }
 
     public int getMaxPlayers() {
