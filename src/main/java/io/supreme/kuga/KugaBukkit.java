@@ -58,12 +58,6 @@ public class KugaBukkit extends JavaPlugin {
 
         kugaServer = new KugaServer(serverID, Bukkit.getPort(), serverGame, serverGame.getMaxPlayers(), serverGameIdName);
 
-        /*try (Jedis jedis = new KugaCommons().getJedisPool().getResource()) {
-            String json = this.getGSON().toJson(this.getKugaServer());
-            String key = "KugaServer:" + this.getKugaServer().getID();
-            jedis.set(key, json);
-        }*/
-
     }
 
     public KugaServer getKugaServer() {
