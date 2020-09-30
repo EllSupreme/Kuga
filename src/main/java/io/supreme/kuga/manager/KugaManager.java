@@ -1,5 +1,6 @@
 package io.supreme.kuga.manager;
 
+import io.supreme.kuga.KugaBukkit;
 import io.supreme.kuga.data.DataLibrary;
 import io.supreme.kuga.server.KugaServer;
 import io.supreme.kuga.server.ServerGame;
@@ -7,6 +8,7 @@ import net.md_5.bungee.Util;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.config.ServerInfo;
 import org.apache.commons.io.FileUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -20,6 +22,8 @@ import java.util.UUID;
 public class KugaManager {
 
     private int port;
+
+    private KugaServer kugaServer;
 
     public List<KugaServer> servers = new ArrayList<>();
 
@@ -75,6 +79,27 @@ public class KugaManager {
             ex.printStackTrace();
             return null;
         }
+    }
+
+    public void setServer() {
+
+        ServerGame serverGame = ServerGame.getServerGame(KugaBukkit.getPlugin().getConfig().getString("server.serverGame"));
+        UUID serverUUID = UUID.fromString(KugaBukkit.getPlugin().getConfig().getString("server.serverUUID"));
+
+        ProxyServer server = ProxyServer.getInstance();
+
+        InetSocketAddress ip = Util.getAddr("localhost:" + Bukkit.getPort());
+        server.constructServerInfo(serverUUID.toString(), ip, "", false);
+
+        kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
+    }
+
+    public KugaServer getKugaServer() {
+        return kugaServer;
+    }
+
+    public int getAvailableID() {
+        return (int) (Math.random() * (30 - 1)) + 1;
     }
 
     public int getAvailablePort() {

@@ -4,23 +4,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.supreme.kuga.data.DataLibrary;
 import io.supreme.kuga.database.KugaCommons;
-import io.supreme.kuga.database.config.JedisConfig;
+import io.supreme.kuga.manager.KugaManager;
 import io.supreme.kuga.manager.LoadBalancing;
 import io.supreme.kuga.server.KugaServer;
-import io.supreme.kuga.server.ServerGame;
-import net.md_5.bungee.Util;
-import net.md_5.bungee.api.ProxyServer;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.net.InetSocketAddress;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class KugaBukkit extends JavaPlugin {
 
-    private KugaServer kugaServer;
     private LoadBalancing loadBalancing = new LoadBalancing();
     private Gson gson = new GsonBuilder().create();
 
@@ -28,7 +18,7 @@ public class KugaBukkit extends JavaPlugin {
     public void onLoad() {
         new KugaCommons().setupBukittJedisConnection();
         new DataLibrary().initialize();
-        this.setServer();
+        new KugaManager().setServer();
         super.onLoad();
     }
 
@@ -51,28 +41,6 @@ public class KugaBukkit extends JavaPlugin {
     @Override
     public void onDisable() {
         super.onDisable();
-    }
-
-    private void setServer() {
-
-        ServerGame serverGame = ServerGame.getServerGame(getConfig().getString("server.serverGame"));
-        UUID serverUUID = UUID.fromString(getConfig().getString("server.serverUUID"));
-
-        ProxyServer server = ProxyServer.getInstance();
-
-        InetSocketAddress ip = Util.getAddr("localhost:" + Bukkit.getPort());
-        server.constructServerInfo(serverUUID.toString(), ip, "", false);
-
-        kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
-
-    }
-
-    public KugaServer getKugaServer() {
-        return kugaServer;
-    }
-
-    public int getAvailableID() {
-        return (int) (Math.random() * (30 - 1)) + 1;
     }
 
     public static KugaBukkit getPlugin() {
