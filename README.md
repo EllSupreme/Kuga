@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="Version" src="https://img.shields.io/badge/Version-0.0.1-%2376B900.svg?&style=for-the-badge&logo=&logoColor=white" />
+</p>
+
 # Kuga
 
 🦺 Kuga is currently under development, so it is updated regularly. Some functions may not be 100% functional. Thank you for your understanding.
