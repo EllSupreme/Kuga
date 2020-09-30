@@ -3,6 +3,8 @@
 #        v 0.0.1        #
 #########################
 
+version: "0.0.1"
+
 autoStart: false
 
 jedis:
@@ -14,4 +16,4 @@ jedis:
 
 server:
   serverGame: <serverGame>
-  serverID: <serverID>
+  serverUUID: <serverUUID>

@@ -15,30 +15,22 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.UUID;
 
 public class KugaManager {
 
     private int port;
-    private String serveridname;
-    private int id;
-    private ServerInfo info;
 
     public List<KugaServer> servers = new ArrayList<>();
 
     public void startServer(ServerGame serverGame) throws IOException {
 
-        this.id = 1;
         this.port = getAvailablePort();
-        this.serveridname = serverGame.getGameName() + "-" + id;
+        UUID uuid = UUID.randomUUID();
 
-        File newServerFile = new File(DataLibrary.ACTIVE_SERVERS, serveridname);
+        File newServerFile = new File(DataLibrary.ACTIVE_SERVERS, uuid.toString());
         FileUtils.deleteDirectory(newServerFile);
         FileUtils.copyDirectory(DataLibrary.TEMPLATE_SERVER, newServerFile);
-
-        ProxyServer server = ProxyServer.getInstance();
-
-        InetSocketAddress ip = Util.getAddr("localhost:" + port);
-        server.constructServerInfo(serveridname, ip, "", false);
 
         File serverPropertiesTemplate = new File(DataLibrary.TEMPLATE_SERVER, "server.properties");
         File serverProperties = new File(newServerFile, "server.properties");
@@ -47,29 +39,22 @@ public class KugaManager {
         FileConfiguration config = YamlConfiguration.loadConfiguration(configKuga);
 
         config.set("server.serverGame", serverGame.getGameName());
-        config.set("server.serverID", id);
+        config.set("server.serverUUID", uuid.toString());
 
         try {
             final Properties props = new Properties();
             props.load(new FileInputStream(serverPropertiesTemplate));
             props.setProperty("server-port", new StringBuilder().append(port).toString());
-            props.setProperty("server-name", new StringBuilder().append(serveridname).toString());
+            props.setProperty("server-name", new StringBuilder().append(serverGame.getGameName()).toString());
             props.store(new FileOutputStream(serverProperties), null);
         } catch (Exception ex3) {
             ex3.printStackTrace();
         }
 
-        System.out.println("Kuga : A server has been started.");
+        System.out.println("Kuga : A server : " + serverGame.getGameName() + " has been started.");
 
         this.createSpigotProcess();
     }
-
-    /*public void deleteServer(ServerGame serverGame, int id) throws IOException {
-        this.serveridname = serverGame.getGameName() + "-" + id;
-        File serverFile = new File(DataLibrary.ACTIVE_SERVERS, serveridname);
-        FileUtils.deleteDirectory(serverFile);
-        servers.remove(new KugaServer())
-    }*/
 
     private Process createSpigotProcess() {
         final List<String> args = new ArrayList<String>();

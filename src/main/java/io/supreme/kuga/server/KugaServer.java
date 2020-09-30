@@ -1,23 +1,23 @@
 package io.supreme.kuga.server;
 
 import java.util.List;
+import java.util.UUID;
 
 public class KugaServer {
 
     private int id;
+    private UUID uuid;
 
     private ServerGame serverGame;
-    private int port, maxPlayers, currentPlayers;
-    private String serverName, mapName;
+    private int port, maxPlayers, onlinePlayers;
 
-    private List<String> properties;
-
-    public KugaServer(int id, int port, ServerGame serverGame, int maxPlayers, String serverName) {
+    public KugaServer(int id, ServerGame serverGame, UUID uuid, int port, int maxPlayers, int onlinePlayers) {
         this.id = id;
-        this.port = port;
         this.serverGame = serverGame;
+        this.uuid = uuid;
+        this.port = port;
         this.maxPlayers = maxPlayers;
-        this.serverName = serverName;
+        this.onlinePlayers = onlinePlayers;
     }
 
     public int getID() {
@@ -28,20 +28,28 @@ public class KugaServer {
         this.id = id;
     }
 
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
     public ServerGame getServerGame() {
         return serverGame;
     }
 
     public void setServerGame(ServerGame serverGame) {
         this.serverGame = serverGame;
+    }
+
+    public UUID getUUID() {
+        return uuid;
+    }
+
+    public void setUUID(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
     }
 
     public int getMaxPlayers() {
@@ -52,12 +60,12 @@ public class KugaServer {
         this.maxPlayers = maxPlayers;
     }
 
-    public String getServerName() {
-        return serverName;
+    public int getOnlinePlayers() {
+        return onlinePlayers;
     }
 
-    public void setMaxPlayers(String serverName) {
-        this.serverName = serverName;
+    public void setOnlinePlayers(int onlinePlayers) {
+        this.onlinePlayers = onlinePlayers;
     }
 
 }

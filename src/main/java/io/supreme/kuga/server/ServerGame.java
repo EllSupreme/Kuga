@@ -20,4 +20,11 @@ public enum ServerGame {
         return maxPlayers;
     }
 
+    public static ServerGame getServerGame(String serverGameName) {
+        if (serverGameName == TEST.getGameName()) {
+            return TEST;
+        }
+        return null;
+    }
+
 }

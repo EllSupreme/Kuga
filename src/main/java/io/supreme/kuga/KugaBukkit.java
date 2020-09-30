@@ -8,9 +8,13 @@ import io.supreme.kuga.database.config.JedisConfig;
 import io.supreme.kuga.manager.LoadBalancing;
 import io.supreme.kuga.server.KugaServer;
 import io.supreme.kuga.server.ServerGame;
+import net.md_5.bungee.Util;
+import net.md_5.bungee.api.ProxyServer;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.net.InetSocketAddress;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -38,6 +42,7 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        out("Kuga : Start on the version v "+getConfig().getString("version")+" .");
         out("Kuga : Ready to use.");
         if (getConfig().getBoolean("autoStart")) {
             this.loadBalancing.start();
@@ -52,12 +57,15 @@ public class KugaBukkit extends JavaPlugin {
 
     private void setServer() {
 
-        String stringServerGame = getConfig().getString("server.serverGame");
-        ServerGame serverGame = getStringToServerGame(stringServerGame);
-        int serverID = getConfig().getInt("server.serverID");
-        String serverGameIdName = stringServerGame + "-" + serverID;
+        ServerGame serverGame = ServerGame.getServerGame(getConfig().getString("server.serverGame"));
+        UUID serverUUID = UUID.fromString(getConfig().getString("server.serverUUID"));
 
-        kugaServer = new KugaServer(serverID, Bukkit.getPort(), serverGame, serverGame.getMaxPlayers(), serverGameIdName);
+        ProxyServer server = ProxyServer.getInstance();
+
+        InetSocketAddress ip = Util.getAddr("localhost:" + Bukkit.getPort());
+        server.constructServerInfo(serverUUID.toString(), ip, "", false);
+
+        kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
 
     }
 
@@ -65,11 +73,8 @@ public class KugaBukkit extends JavaPlugin {
         return kugaServer;
     }
 
-    private ServerGame getStringToServerGame(String serverGame) {
-        if (serverGame.equalsIgnoreCase(ServerGame.TEST.getGameName())) {
-            return ServerGame.TEST;
-        }
-        return null;
+    public int getAvailableID() {
+        return (int) (Math.random() * (30 - 1)) + 1;
     }
 
     public static KugaBukkit getPlugin() {
