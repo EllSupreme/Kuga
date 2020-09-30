@@ -54,7 +54,6 @@ public class KugaManager {
         config.set("server.serverGame", serverGame.getGameName());
         config.set("server.serverID", id);
 
-
         try {
             final Properties props = new Properties();
             props.load(new FileInputStream(serverPropertiesTemplate));
@@ -69,6 +68,13 @@ public class KugaManager {
 
         this.createSpigotProcess();
     }
+
+    /*public void deleteServer(ServerGame serverGame, int id) throws IOException {
+        this.serveridname = serverGame.getGameName() + "-" + id;
+        File serverFile = new File(DataLibrary.ACTIVE_SERVERS, serveridname);
+        FileUtils.deleteDirectory(serverFile);
+        servers.remove(new KugaServer())
+    }*/
 
     private Process createSpigotProcess() {
         final List<String> args = new ArrayList<String>();
