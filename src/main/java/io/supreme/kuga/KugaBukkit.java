@@ -6,6 +6,7 @@ import io.supreme.kuga.manager.LibraryManager;
 import io.supreme.kuga.database.KugaCommons;
 import io.supreme.kuga.manager.KugaManager;
 import io.supreme.kuga.manager.LoadBalancing;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class KugaBukkit extends JavaPlugin {
@@ -15,9 +16,10 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        new KugaCommons().setupBukittJedisConnection();
-        new LibraryManager().initialize();
-        new KugaManager().setServer();
+        //new KugaCommons().setupBukittJedisConnection();
+        if (Bukkit.getPort() != 25565) {
+            new KugaManager().setServer();
+        }
         super.onLoad();
     }
 

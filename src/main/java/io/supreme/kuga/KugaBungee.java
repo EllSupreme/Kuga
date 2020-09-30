@@ -2,6 +2,7 @@ package io.supreme.kuga;
 
 import io.supreme.kuga.database.KugaCommons;
 import io.supreme.kuga.database.config.JedisConfig;
+import io.supreme.kuga.manager.LibraryManager;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
@@ -22,7 +23,8 @@ public class KugaBungee extends Plugin {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        new KugaCommons().setupBungeeJedisConnection();
+        new LibraryManager().initialize();
+        //new KugaCommons().setupBungeeJedisConnection();
         super.onLoad();
     }
 

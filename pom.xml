@@ -31,14 +31,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <finalName>${artifactId}</finalName>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -49,13 +41,6 @@
             <url>http://repo.md-5.net/content/repositories/snapshots/</url>
         </repository>
 
-        <!-- BUNGEECORD -->
-        <repository>
-            <id>bungeecord-repo</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-
-        <!-- SPIGOT -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -79,13 +64,11 @@
             <version>2.8.6</version>
         </dependency>
 
-        <!-- REDIS -->
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>LATEST</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <version>3.3.0</version>
         </dependency>
 
         <!-- Apache API -->
@@ -95,46 +78,19 @@
             <version>2.4.2</version>
         </dependency>
 
-        <!-- BungeeCord -->
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
-            <version>1.10-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.10-SNAPSHOT</version>
-            <type>javadoc</type>
+            <version>1.16-R0.2</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spigot-API -->
+        <!--Spigot API-->
         <dependency>
-            <groupId>spigot</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.8.8</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libraries/spigot_server.jar</systemPath>
-        </dependency>
-
-        <!-- Hikari -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>2.7.2</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- PlayPen -->
-        <dependency>
-            <groupId>playpen</groupId>
-            <artifactId>playpen</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libraries/playpen-1.0.jar</systemPath>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

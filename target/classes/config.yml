@@ -1,0 +1,19 @@
+#########################
+#         Kuga          #
+#        v 0.0.1        #
+#########################
+
+version: "0.0.1"
+
+autoStart: false
+
+jedis:
+  hostname: "127.0.0.1"
+  password: ""
+  database: 1
+  port: 6379
+  use-password: true
+
+server:
+  serverGame: <serverGame>
+  serverUUID: <serverUUID>
