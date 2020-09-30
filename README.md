@@ -1,6 +1,6 @@
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/Version-0.0.1-%2376B900.svg?&style=for-the-badge&logo=&logoColor=white" />
-  <img alt="Stability" src="https://img.shields.io/badge/Stability-UnStable%20i5%2010th-%230071C5.svg?&style=for-the-badge&logo=&logoColor=white">
+  <img alt="Stability" src="https://img.shields.io/badge/Stability-UnStable-%230071C5.svg?&style=for-the-badge&logo=&logoColor=white">
 </p>
 
 # Kuga
