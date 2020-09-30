@@ -12,17 +12,19 @@ public class LoadBalancing extends Thread {
 
         while (!(this.isInterrupted())) {
 
-            // LoadBalancing
-            try {
-                new KugaManager().startServer(ServerGame.TEST);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            if (new KugaManager().servers.size() == 0) {
+                // LoadBalancing
+                try {
+                    new KugaManager().startServer(ServerGame.TEST);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-            try {
-                Thread.sleep(25 * 1000);
-            } catch (InterruptedException exception) {
-                exception.printStackTrace();
+                try {
+                    Thread.sleep(25 * 1000);
+                } catch (InterruptedException exception) {
+                    exception.printStackTrace();
+                }
             }
         }
         super.run();
