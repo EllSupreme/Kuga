@@ -16,7 +16,7 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        //new KugaCommons().setupBukittJedisConnection();
+        new KugaCommons().setupBukittJedisConnection();
         if (Bukkit.getPort() != 25565) {
             new KugaManager().setServer();
         }

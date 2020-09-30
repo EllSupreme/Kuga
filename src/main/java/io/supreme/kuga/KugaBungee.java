@@ -24,7 +24,7 @@ public class KugaBungee extends Plugin {
             e.printStackTrace();
         }
         new LibraryManager().initialize();
-        //new KugaCommons().setupBungeeJedisConnection();
+        new KugaCommons().setupBungeeJedisConnection();
         super.onLoad();
     }
 
