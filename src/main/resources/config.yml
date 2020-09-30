@@ -11,3 +11,7 @@ jedis:
   database: 1
   port: 6379
   use-password: true
+
+server:
+  serverGame: <serverGame>
+  serverID: <serverID>

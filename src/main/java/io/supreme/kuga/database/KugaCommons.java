@@ -1,10 +1,6 @@
 package io.supreme.kuga.database;
 
-import com.zaxxer.hikari.HikariDataSource;
-import io.supreme.kuga.Kuga;
 import io.supreme.kuga.database.config.JedisConfig;
-import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 

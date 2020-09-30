@@ -5,14 +5,18 @@ import com.google.gson.GsonBuilder;
 import io.supreme.kuga.data.DataLibrary;
 import io.supreme.kuga.database.KugaCommons;
 import io.supreme.kuga.database.config.JedisConfig;
-import io.supreme.kuga.loadbalancing.LoadBalancing;
+import io.supreme.kuga.manager.LoadBalancing;
+import io.supreme.kuga.server.KugaServer;
+import io.supreme.kuga.server.ServerGame;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Kuga extends JavaPlugin {
+public class KugaBukkit extends JavaPlugin {
 
+    private KugaServer kugaServer;
     private LoadBalancing loadBalancing = new LoadBalancing();
     private ExecutorService executorService;
     private Gson gson = new GsonBuilder().create();
@@ -27,6 +31,7 @@ public class Kuga extends JavaPlugin {
                 getConfig().getBoolean("jedis.use-password")
         ));
         new DataLibrary().initialize();
+        this.setServer();
         this.executorService = Executors.newCachedThreadPool();
         super.onLoad();
     }
@@ -44,8 +49,36 @@ public class Kuga extends JavaPlugin {
         super.onDisable();
     }
 
-    public static Kuga getPlugin() {
-        return getPlugin(Kuga.class);
+    private void setServer() {
+
+        String stringServerGame = getConfig().getString("server.serverGame");
+        ServerGame serverGame = getStringToServerGame(stringServerGame);
+        int serverID = getConfig().getInt("server.serverID");
+        String serverGameIdName = stringServerGame + "-" + serverID;
+
+        kugaServer = new KugaServer(serverID, Bukkit.getPort(), serverGame, serverGame.getMaxPlayers(), serverGameIdName);
+
+        /*try (Jedis jedis = new KugaCommons().getJedisPool().getResource()) {
+            String json = this.getGSON().toJson(this.getKugaServer());
+            String key = "KugaServer:" + this.getKugaServer().getID();
+            jedis.set(key, json);
+        }*/
+
+    }
+
+    public KugaServer getKugaServer() {
+        return kugaServer;
+    }
+
+    private ServerGame getStringToServerGame(String serverGame) {
+        if (serverGame.equalsIgnoreCase(ServerGame.TEST.getGameName())) {
+            return ServerGame.TEST;
+        }
+        return null;
+    }
+
+    public static KugaBukkit getPlugin() {
+        return getPlugin(KugaBukkit.class);
     }
 
     public ExecutorService getExecutorService() {

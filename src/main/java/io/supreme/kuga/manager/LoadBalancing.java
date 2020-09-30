@@ -1,4 +1,4 @@
-package io.supreme.kuga.loadbalancing;
+package io.supreme.kuga.manager;
 
 import io.supreme.kuga.manager.KugaManager;
 import io.supreme.kuga.server.ServerGame;
