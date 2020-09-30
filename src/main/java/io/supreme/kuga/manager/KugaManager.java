@@ -86,7 +86,7 @@ public class KugaManager {
 
         ProxyServer server = ProxyServer.getInstance();
 
-        InetSocketAddress ip = Util.getAddr("localhost:" + Bukkit.getPort());
+        InetSocketAddress ip = (InetSocketAddress) Util.getAddr("localhost:" + Bukkit.getPort());
         server.constructServerInfo(serverUUID.toString(), ip, "", false);
 
         kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
