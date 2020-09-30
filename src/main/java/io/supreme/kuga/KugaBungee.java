@@ -22,14 +22,7 @@ public class KugaBungee extends Plugin {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        new KugaCommons().connect(new JedisConfig(
-                config.getString("jedis.host"),
-                config.getInt("jedis.port"),
-                config.getString("jedis.password"),
-                config.getInt("jedis.database"),
-                config.getBoolean("jedis.use-password")
-        ));
+        new KugaCommons().setupBungeeJedisConnection();
         super.onLoad();
     }
 
@@ -53,5 +46,9 @@ public class KugaBungee extends Plugin {
 
     public void out(String string) {
         System.out.println(string);
+    }
+
+    public Configuration getConfiguration() {
+        return config;
     }
 }

@@ -27,13 +27,7 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        new KugaCommons().connect(new JedisConfig(
-                getConfig().getString("jedis.host"),
-                getConfig().getInt("jedis.port"),
-                getConfig().getString("jedis.password"),
-                getConfig().getInt("jedis.database"),
-                getConfig().getBoolean("jedis.use-password")
-        ));
+        new KugaCommons().setupBukittJedisConnection();
         new DataLibrary().initialize();
         this.setServer();
         this.executorService = Executors.newCachedThreadPool();
