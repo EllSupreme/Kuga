@@ -2,7 +2,7 @@
 
 🦺 Kuga is currently under development, so it is updated regularly. Some functions may not be 100% functional. Thank you for your understanding.
 
-Kuga is an application allowing to manage servers.
+Kuga is an application allowing to start servers and soon be able to manage them. All this in java and jedis.
 
 Server Version | Support
 ---------------|--------
