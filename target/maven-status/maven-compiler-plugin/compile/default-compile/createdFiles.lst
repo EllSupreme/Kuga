@@ -1,0 +1,9 @@
+io\supreme\kuga\server\ServerGame.class
+io\supreme\kuga\manager\LoadBalancing.class
+io\supreme\kuga\server\KugaServer.class
+io\supreme\kuga\KugaBungee.class
+io\supreme\kuga\manager\KugaManager.class
+io\supreme\kuga\database\config\JedisConfig.class
+io\supreme\kuga\database\KugaCommons.class
+io\supreme\kuga\KugaBukkit.class
+io\supreme\kuga\manager\LibraryManager.class
