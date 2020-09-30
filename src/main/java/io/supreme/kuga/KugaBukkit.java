@@ -38,6 +38,7 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        out("Kuga : Ready to use.");
         if (getConfig().getBoolean("autoStart")) {
             this.loadBalancing.start();
         }
@@ -81,6 +82,10 @@ public class KugaBukkit extends JavaPlugin {
 
     public Gson getGSON() {
         return gson;
+    }
+
+    public void out(String string) {
+        System.out.println(string);
     }
 
 }
