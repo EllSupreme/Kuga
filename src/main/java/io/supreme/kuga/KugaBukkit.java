@@ -42,8 +42,14 @@ public class KugaBukkit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        out("  _  __                        \n" +
+                " | |/ /  _   _    __ _    __ _ \n" +
+                " | ' /  | | | |  / _` |  / _` |\n" +
+                " | . \\  | |_| | | (_| | | (_| |\n" +
+                " |_|\\_\\  \\__,_|  \\__, |  \\__,_|\n" +
+                "                 |___/         ");
         out("Kuga : Start on the version v "+getConfig().getString("version")+" .");
-        out("Kuga : Ready to use.");
+        out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
         if (getConfig().getBoolean("autoStart")) {
             this.loadBalancing.start();
         }
