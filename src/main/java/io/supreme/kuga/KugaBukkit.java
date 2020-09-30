@@ -22,7 +22,6 @@ public class KugaBukkit extends JavaPlugin {
 
     private KugaServer kugaServer;
     private LoadBalancing loadBalancing = new LoadBalancing();
-    private ExecutorService executorService;
     private Gson gson = new GsonBuilder().create();
 
     @Override
@@ -30,7 +29,6 @@ public class KugaBukkit extends JavaPlugin {
         new KugaCommons().setupBukittJedisConnection();
         new DataLibrary().initialize();
         this.setServer();
-        this.executorService = Executors.newCachedThreadPool();
         super.onLoad();
     }
 
@@ -79,10 +77,6 @@ public class KugaBukkit extends JavaPlugin {
 
     public static KugaBukkit getPlugin() {
         return getPlugin(KugaBukkit.class);
-    }
-
-    public ExecutorService getExecutorService() {
-        return executorService;
     }
 
     public Gson getGSON() {

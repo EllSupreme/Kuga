@@ -7,9 +7,12 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 import java.io.Closeable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class KugaCommons implements Closeable {
 
+    private ExecutorService executorService = Executors.newCachedThreadPool();
     private JedisPool jedisPool;
 
     public void setupBungeeJedisConnection() {
@@ -50,6 +53,10 @@ public class KugaCommons implements Closeable {
 
     public JedisPool getJedisPool() {
         return this.jedisPool;
+    }
+
+    public ExecutorService getExecutorService() {
+        return executorService;
     }
 
 }
