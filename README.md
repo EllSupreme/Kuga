@@ -26,3 +26,17 @@ Server Version | Support
 
 ## Name thinker
 - Idryld
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/EllSupreme"><img src="https://github.com/account" width="100px;" alt=""/><br /><sub><b>Supreme_</b></sub></a><br /><a href="https://github.com/EllSupreme/Kuga" title="Code">💻</a></td>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<hr>
+<p align="center">
+Developed with ❤️ in India 🇮🇳 
+</p>
