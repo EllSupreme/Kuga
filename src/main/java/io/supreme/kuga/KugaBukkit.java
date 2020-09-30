@@ -2,11 +2,10 @@ package io.supreme.kuga;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import io.supreme.kuga.data.DataLibrary;
+import io.supreme.kuga.manager.LibraryManager;
 import io.supreme.kuga.database.KugaCommons;
 import io.supreme.kuga.manager.KugaManager;
 import io.supreme.kuga.manager.LoadBalancing;
-import io.supreme.kuga.server.KugaServer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class KugaBukkit extends JavaPlugin {
@@ -17,7 +16,7 @@ public class KugaBukkit extends JavaPlugin {
     @Override
     public void onLoad() {
         new KugaCommons().setupBukittJedisConnection();
-        new DataLibrary().initialize();
+        new LibraryManager().initialize();
         new KugaManager().setServer();
         super.onLoad();
     }

@@ -1,12 +1,10 @@
 package io.supreme.kuga.manager;
 
 import io.supreme.kuga.KugaBukkit;
-import io.supreme.kuga.data.DataLibrary;
 import io.supreme.kuga.server.KugaServer;
 import io.supreme.kuga.server.ServerGame;
 import net.md_5.bungee.Util;
 import net.md_5.bungee.api.ProxyServer;
-import net.md_5.bungee.api.config.ServerInfo;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -32,11 +30,11 @@ public class KugaManager {
         this.port = getAvailablePort();
         UUID uuid = UUID.randomUUID();
 
-        File newServerFile = new File(DataLibrary.ACTIVE_SERVERS, uuid.toString());
+        File newServerFile = new File(LibraryManager.ACTIVE_SERVERS, uuid.toString());
         FileUtils.deleteDirectory(newServerFile);
-        FileUtils.copyDirectory(DataLibrary.TEMPLATE_SERVER, newServerFile);
+        FileUtils.copyDirectory(LibraryManager.TEMPLATE_SERVER, newServerFile);
 
-        File serverPropertiesTemplate = new File(DataLibrary.TEMPLATE_SERVER, "server.properties");
+        File serverPropertiesTemplate = new File(LibraryManager.TEMPLATE_SERVER, "server.properties");
         File serverProperties = new File(newServerFile, "server.properties");
 
         File configKuga = new File(newServerFile + "/plugins/Kuga/", "config.yml");
@@ -70,7 +68,7 @@ public class KugaManager {
         args.add("-jar");
         args.add("spigot.jar");
         final ProcessBuilder setup = new ProcessBuilder(args);
-        setup.directory(DataLibrary.ACTIVE_SERVERS);
+        setup.directory(LibraryManager.ACTIVE_SERVERS);
         setup.redirectErrorStream(true);
         try {
             return setup.start();
