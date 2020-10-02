@@ -84,10 +84,11 @@ public class KugaManager {
         ServerGame serverGame = ServerGame.getServerGame(KugaBukkit.getPlugin().getConfig().getString("server.serverGame"));
         UUID serverUUID = UUID.fromString(KugaBukkit.getPlugin().getConfig().getString("server.serverUUID"));
 
-        ProxyServer server = ProxyServer.getInstance();
+        // Envoyer une requete a bungeecord avec des channels qu'il doit constructServerInfo (Il faut envoyer l'uuid du serveur et le port)
+        /*ProxyServer server = ProxyServer.getInstance();
 
         InetSocketAddress ip = (InetSocketAddress) Util.getAddr("localhost:" + Bukkit.getPort());
-        server.constructServerInfo(serverUUID.toString(), ip, "", false);
+        server.constructServerInfo(serverUUID.toString(), ip, "", false);*/
 
         kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
     }
