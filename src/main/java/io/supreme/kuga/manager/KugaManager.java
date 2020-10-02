@@ -1,5 +1,6 @@
 package io.supreme.kuga.manager;
 
+import io.supreme.kuga.Kuga;
 import io.supreme.kuga.KugaBukkit;
 import io.supreme.kuga.server.KugaServer;
 import io.supreme.kuga.server.ServerGame;
@@ -20,10 +21,6 @@ import java.util.UUID;
 public class KugaManager {
 
     private int port;
-
-    private KugaServer kugaServer;
-
-    public List<KugaServer> servers = new ArrayList<>();
 
     public void startServer(ServerGame serverGame) throws IOException {
 
@@ -81,8 +78,8 @@ public class KugaManager {
 
     public void setServer() {
 
-        ServerGame serverGame = ServerGame.getServerGame(KugaBukkit.getPlugin().getConfig().getString("server.serverGame"));
-        UUID serverUUID = UUID.fromString(KugaBukkit.getPlugin().getConfig().getString("server.serverUUID"));
+        ServerGame serverGame = ServerGame.getServerGame(Kuga.getPlugin().getKugaBukkit().getConfig().getString("server.serverGame"));
+        UUID serverUUID = UUID.fromString(Kuga.getPlugin().getKugaBukkit().getConfig().getString("server.serverUUID"));
 
         // Envoyer une requete a bungeecord avec des channels qu'il doit constructServerInfo (Il faut envoyer l'uuid du serveur et le port)
         /*ProxyServer server = ProxyServer.getInstance();
@@ -90,11 +87,7 @@ public class KugaManager {
         InetSocketAddress ip = (InetSocketAddress) Util.getAddr("localhost:" + Bukkit.getPort());
         server.constructServerInfo(serverUUID.toString(), ip, "", false);*/
 
-        kugaServer = new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0);
-    }
-
-    public KugaServer getKugaServer() {
-        return kugaServer;
+        Kuga.getPlugin().newKugaServer(new KugaServer(getAvailableID(), serverGame, serverUUID, Bukkit.getPort(), serverGame.getMaxPlayers(), 0));
     }
 
     public int getAvailableID() {

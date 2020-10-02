@@ -1,5 +1,6 @@
 package io.supreme.kuga.database;
 
+import io.supreme.kuga.Kuga;
 import io.supreme.kuga.KugaBukkit;
 import io.supreme.kuga.KugaBungee;
 import io.supreme.kuga.database.config.JedisConfig;
@@ -17,21 +18,21 @@ public class KugaCommons implements Closeable {
 
     public void setupBungeeJedisConnection() {
         new KugaCommons().connect(new JedisConfig(
-                new KugaBungee().getConfiguration().getString("jedis.host"),
-                new KugaBungee().getConfiguration().getInt("jedis.port"),
-                new KugaBungee().getConfiguration().getString("jedis.password"),
-                new KugaBungee().getConfiguration().getInt("jedis.database"),
-                new KugaBungee().getConfiguration().getBoolean("jedis.use-password")
+                Kuga.getPlugin().getKugaBungee().getConfig().getString("jedis.host"),
+                Kuga.getPlugin().getKugaBungee().getConfig().getInt("jedis.port"),
+                Kuga.getPlugin().getKugaBungee().getConfig().getString("jedis.password"),
+                Kuga.getPlugin().getKugaBungee().getConfig().getInt("jedis.database"),
+                Kuga.getPlugin().getKugaBungee().getConfig().getBoolean("jedis.use-password")
         ));
     }
 
     public void setupBukittJedisConnection() {
         new KugaCommons().connect(new JedisConfig(
-                KugaBukkit.getPlugin().getConfig().getString("jedis.host"),
-                KugaBukkit.getPlugin().getConfig().getInt("jedis.port"),
-                KugaBukkit.getPlugin().getConfig().getString("jedis.password"),
-                KugaBukkit.getPlugin().getConfig().getInt("jedis.database"),
-                KugaBukkit.getPlugin().getConfig().getBoolean("jedis.use-password")
+                Kuga.getPlugin().getKugaBukkit().getConfig().getString("jedis.host"),
+                Kuga.getPlugin().getKugaBukkit().getConfig().getInt("jedis.port"),
+                Kuga.getPlugin().getKugaBukkit().getConfig().getString("jedis.password"),
+                Kuga.getPlugin().getKugaBukkit().getConfig().getInt("jedis.database"),
+                Kuga.getPlugin().getKugaBukkit().getConfig().getBoolean("jedis.use-password")
         ));
     }
 

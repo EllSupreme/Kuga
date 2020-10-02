@@ -1,5 +1,6 @@
 package io.supreme.kuga.manager;
 
+import io.supreme.kuga.Kuga;
 import io.supreme.kuga.manager.KugaManager;
 import io.supreme.kuga.server.ServerGame;
 
@@ -12,7 +13,7 @@ public class LoadBalancing extends Thread {
 
         while (!(this.isInterrupted())) {
 
-            if (new KugaManager().servers.size() == 0) {
+            if (Kuga.getPlugin().servers.size() == 0) {
                 // LoadBalancing
                 try {
                     new KugaManager().startServer(ServerGame.TEST);

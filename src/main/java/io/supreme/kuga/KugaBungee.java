@@ -30,14 +30,14 @@ public class KugaBungee extends Plugin {
 
     @Override
     public void onEnable() {
-        out("  _  __                        \n" +
+        Kuga.getPlugin().out("  _  __                        \n" +
                 " | |/ /  _   _    __ _    __ _ \n" +
                 " | ' /  | | | |  / _` |  / _` |\n" +
                 " | . \\  | |_| | | (_| | | (_| |\n" +
                 " |_|\\_\\  \\__,_|  \\__, |  \\__,_|\n" +
                 "                 |___/         ");
-        out("Kuga : Start on the version v "+config.getString("version")+" .");
-        out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
+        Kuga.getPlugin().out("Kuga : Start on the version v "+config.getString("version")+" .");
+        Kuga.getPlugin().out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
         super.onEnable();
     }
 
@@ -46,11 +46,7 @@ public class KugaBungee extends Plugin {
         super.onDisable();
     }
 
-    public void out(String string) {
-        System.out.println(string);
-    }
-
-    public Configuration getConfiguration() {
+    public Configuration getConfig() {
         return config;
     }
 }
