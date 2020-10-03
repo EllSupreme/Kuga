@@ -36,7 +36,7 @@ public class KugaBungee extends Plugin {
                 " | . \\  | |_| | | (_| | | (_| |\n" +
                 " |_|\\_\\  \\__,_|  \\__, |  \\__,_|\n" +
                 "                 |___/         ");
-        Kuga.getPlugin().out("Kuga : Start on the version v "+config.getString("version")+" .");
+        Kuga.getPlugin().out("Kuga : Start on the version v "+config.getString("kuga.version")+" .");
         Kuga.getPlugin().out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
         super.onEnable();
     }

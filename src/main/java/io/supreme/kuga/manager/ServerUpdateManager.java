@@ -14,7 +14,7 @@ public class ServerUpdateManager extends BukkitRunnable {
 
             String jsonServer = Kuga.getPlugin().getGSON().toJson(Kuga.getPlugin().getKugaServer());
 
-            jedis.publish("KugaServer", jsonServer);
+            jedis.publish(Kuga.getPlugin().getKugaBukkit().getConfig().getString("channels.message"), jsonServer);
         }
     }
 }

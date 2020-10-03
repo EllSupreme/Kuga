@@ -32,9 +32,9 @@ public class KugaBukkit extends JavaPlugin {
                 " | . \\  | |_| | | (_| | | (_| |\n" +
                 " |_|\\_\\  \\__,_|  \\__, |  \\__,_|\n" +
                 "                 |___/         ");
-        Kuga.getPlugin().out("Kuga : Start on the version v "+getConfig().getString("version")+" .");
+        Kuga.getPlugin().out("Kuga : Start on the version v "+getConfig().getString("kuga.version")+" .");
         Kuga.getPlugin().out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
-        if (getConfig().getBoolean("autoStart")) {
+        if (getConfig().getBoolean("kuga.autoStart")) {
             this.loadBalancing.start();
         }
         new ServerUpdateManager().runTaskTimerAsynchronously(this, 40L, 20L);
