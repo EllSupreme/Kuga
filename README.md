@@ -11,8 +11,6 @@
 
 Kuga is an application allowing to start servers and soon be able to manage them. All this in java and jedis.
 
----
-
 Server Version | Support
 ---------------|--------
 1.8            |   ✔
