@@ -26,7 +26,7 @@ Server Version | Support
 
 **Todo**
 
-- All the Jedis part
+- All the database management part
 
 ## Developer
-- Supreme
+- [Supreme](https://github.com/EllSupreme/)
