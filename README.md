@@ -33,8 +33,3 @@ Server Version | Support
 
 ## Name thinker
 - Idryld
-
-<hr>
-<p align="center">
-Developed with ❤️ Supreme_
-</p>
