@@ -5,7 +5,7 @@
   <img alt="Language" src="https://img.shields.io/badge/Lang-java-%23ED8B00.svg?&style=for-the-badge&logo=&logoColor=white" />
 </p>
 
-## Kuga
+# Kuga
 
 🦺 Kuga is currently under development, so it is updated regularly. Some functions may not be 100% functional. Thank you for your understanding.
 
@@ -30,6 +30,3 @@ Server Version | Support
 
 ## Developer
 - Supreme
-
-## Name thinker
-- Idryld
