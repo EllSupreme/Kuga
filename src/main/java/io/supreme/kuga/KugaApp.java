@@ -17,16 +17,22 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import sun.audio.AudioPlayer;
 
+import java.applet.AudioClip;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Cette application en java permet de lancer un serveur en un clique.
+ */
 public class KugaApp extends Application {
 
     private Stage primaryStage;
