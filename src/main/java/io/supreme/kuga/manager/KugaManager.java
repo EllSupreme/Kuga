@@ -1,18 +1,14 @@
 package io.supreme.kuga.manager;
 
 import io.supreme.kuga.Kuga;
-import io.supreme.kuga.KugaBukkit;
 import io.supreme.kuga.server.KugaServer;
 import io.supreme.kuga.server.ServerGame;
-import net.md_5.bungee.Util;
-import net.md_5.bungee.api.ProxyServer;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.*;
-import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;

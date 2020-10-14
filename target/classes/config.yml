@@ -3,9 +3,13 @@
 #        v 0.0.1        #
 #########################
 
-version: "0.0.1"
+kuga:
+  version: "0.0.1"
+  autoStart: false
 
-autoStart: false
+channels:
+  message: "Kuga:Message"
+  servers: "Kuga:Servers"
 
 jedis:
   hostname: "127.0.0.1"

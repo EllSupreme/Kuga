@@ -2,7 +2,11 @@ package io.supreme.kuga.server;
 
 public enum ServerGame {
 
-    TEST("Test", 20);
+    TEST("Test", 20),
+    PLAY1("Play1", 20),
+    PLAY2("Play2", 20),
+    PLAY3("Play3", 20),
+    PLAY4("Play4", 20);
 
     private String gameName;
     private int maxPlayers;
