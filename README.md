@@ -26,15 +26,7 @@ Server Version | Support
 
 **Todo**
 
-- All the Jedis part
+- All the database management part
 
 ## Developer
-- Supreme
-
-## Name thinker
-- Idryld
-
-<hr>
-<p align="center">
-Developed with ❤️ Supreme_
-</p>
+- [Supreme](https://github.com/EllSupreme/)
