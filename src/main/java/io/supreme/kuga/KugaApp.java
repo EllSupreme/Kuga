@@ -64,7 +64,7 @@ public class KugaApp extends Application {
          * Text
          */
 
-        Label headerLabel = new Label("Démarrage d'un serveur");
+        Label headerLabel = new Label("Starting a server");
         headerLabel.setFont(Font.font("Arial", FontWeight.BOLD, 24));
         gridPane.add(headerLabel, 0,0,2,1);
         GridPane.setHalignment(headerLabel, HPos.CENTER);
@@ -97,7 +97,7 @@ public class KugaApp extends Application {
          */
 
         Button createNewServer = new Button();
-        createNewServer.setText("Démarrer un serveur");
+        createNewServer.setText("Starting a server");
         createNewServer.setPrefHeight(44.0);
         createNewServer.setDefaultButton(true);
         createNewServer.setPrefWidth(144.0);
@@ -119,8 +119,8 @@ public class KugaApp extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }*/
-            System.out.println("Demande de démarrage : " + getChoice(serverTypeChoiceBox));
-            showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Erreur de création de serveur", "Un erreur est survenue lors de la création d'un serveur : " + getChoice(serverTypeChoiceBox).getGameName() + ". Veuillez réessayer ou redemarrer l'application.");
+            System.out.println("Start-up request : " + getChoice(serverTypeChoiceBox));
+            showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Server creation error", "An error occurred during the creation of a server : " + getChoice(serverTypeChoiceBox).getGameName() + ". Please try again or restart the application.");
         });
     }
 
@@ -131,7 +131,7 @@ public class KugaApp extends Application {
         alert.setContentText(message);
         alert.initOwner(owner);
         alert.show();
-        System.out.println("Nouveau rapport d'erreur.");
+        System.out.println("New error report.");
     }
 
     private GridPane createPage() {
@@ -154,7 +154,7 @@ public class KugaApp extends Application {
 
     public void quit() {
         closing = true;
-        System.out.println("Fermeture de l'application");
+        System.out.println("Closing the application.");
         System.exit(0);
     }
 }
