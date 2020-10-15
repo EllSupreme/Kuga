@@ -14,7 +14,6 @@ public class LoadBalancing extends Thread {
         while (!(this.isInterrupted())) {
 
             if (Kuga.getPlugin().servers.size() == 0) {
-                // LoadBalancing
                 try {
                     new KugaManager().startServer(ServerGame.TEST);
                 } catch (IOException e) {

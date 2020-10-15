@@ -2,27 +2,14 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane prefHeight="500.0" prefWidth="206.0" style="-fx-background-color: #0598ff;" BorderPane.alignment="CENTER">
-         <children>
-            <Text fill="WHITE" layoutX="67.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kuga">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-   </left>
    <right>
       <AnchorPane prefHeight="500.0" prefWidth="701.0" BorderPane.alignment="CENTER">
          <children>
             <ChoiceBox layoutX="175.0" layoutY="148.0" prefHeight="25.0" prefWidth="245.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <Button fx:id="next" layoutX="225.0" layoutY="273.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Créer le serveur" />
-            <Button fx:id="closed" layoutX="568.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="X" textFill="RED" />
+            <CheckBox layoutX="261.0" layoutY="211.0" mnemonicParsing="false" text="Host Game" />
          </children>
       </AnchorPane>
    </right>

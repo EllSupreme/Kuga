@@ -11,10 +11,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.Media;
@@ -78,24 +75,24 @@ public class KugaApp extends Application {
 
 
         /**
-         * ServerType
+         * ServerGame
          */
 
-        ChoiceBox<ServerGame> serverTypeChoiceBox = new ChoiceBox<>();
-        serverTypeChoiceBox.setPrefHeight(25.0);
-        serverTypeChoiceBox.setPrefWidth(245.0);
-        serverTypeChoiceBox.getItems().add(ServerGame.TEST);
-        serverTypeChoiceBox.getItems().add(ServerGame.PLAY1);
-        serverTypeChoiceBox.getItems().add(ServerGame.PLAY2);
-        serverTypeChoiceBox.getItems().add(ServerGame.PLAY3);
-        serverTypeChoiceBox.getItems().add(ServerGame.PLAY4);
-        serverTypeChoiceBox.setValue(ServerGame.TEST);
-        serverTypeChoiceBox.setStyle("-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;");
-        serverTypeChoiceBox.setLayoutX(175.0);
-        serverTypeChoiceBox.setLayoutY(148.0);
-        GridPane.setHalignment(serverTypeChoiceBox, HPos.CENTER);
-        GridPane.setMargin(serverTypeChoiceBox, new Insets(20, 0,20,0));
-        gridPane.add(serverTypeChoiceBox, 0, 3, 2, 1);
+        ChoiceBox<ServerGame> serverGameChoiceBox = new ChoiceBox<>();
+        serverGameChoiceBox.setPrefHeight(25.0);
+        serverGameChoiceBox.setPrefWidth(245.0);
+        serverGameChoiceBox.getItems().add(ServerGame.TEST);
+        serverGameChoiceBox.getItems().add(ServerGame.PLAY1);
+        serverGameChoiceBox.getItems().add(ServerGame.PLAY2);
+        serverGameChoiceBox.getItems().add(ServerGame.PLAY3);
+        serverGameChoiceBox.getItems().add(ServerGame.PLAY4);
+        serverGameChoiceBox.setValue(ServerGame.TEST);
+        serverGameChoiceBox.setStyle("-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;");
+        serverGameChoiceBox.setLayoutX(175.0);
+        serverGameChoiceBox.setLayoutY(148.0);
+        GridPane.setHalignment(serverGameChoiceBox, HPos.CENTER);
+        GridPane.setMargin(serverGameChoiceBox, new Insets(20, 0,20,0));
+        gridPane.add(serverGameChoiceBox, 0, 3, 2, 1);
 
 
         /**
@@ -120,13 +117,13 @@ public class KugaApp extends Application {
          */
 
         createNewServer.setOnAction(event -> {
-            /*try {
-                new KugaManager().startServer(getChoice(serverTypeChoiceBox));
+            try {
+                new KugaManager().startServer(getChoice(serverGameChoiceBox));
             } catch (IOException e) {
                 e.printStackTrace();
-            }*/
-            System.out.println("Start-up request : " + getChoice(serverTypeChoiceBox));
-            showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Server creation error", "An error occurred during the creation of a server : " + getChoice(serverTypeChoiceBox).getGameName() + ". Please try again or restart the application.");
+            }
+            System.out.println("Start-up request : " + getChoice(serverGameChoiceBox));
+            showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Server creation error", "An error occurred during the creation of a server : " + getChoice(serverGameChoiceBox).getGameName() + ". Please try again or restart the application.");
         });
     }
 

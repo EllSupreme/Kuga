@@ -1,8 +1,7 @@
 package io.supreme.kuga;
 
-import io.supreme.kuga.database.KugaCommons;
-import io.supreme.kuga.database.config.JedisConfig;
 import io.supreme.kuga.manager.LibraryManager;
+import io.supreme.kuga.manager.LoadBalancing;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
@@ -14,6 +13,7 @@ import java.io.IOException;
 public class KugaBungee extends Plugin {
 
     private Configuration config;
+    private LoadBalancing loadBalancing;
 
     @Override
     public void onLoad() {
@@ -24,7 +24,6 @@ public class KugaBungee extends Plugin {
             e.printStackTrace();
         }
         new LibraryManager().initialize();
-        new KugaCommons().setupBungeeJedisConnection();
         super.onLoad();
     }
 
@@ -38,6 +37,9 @@ public class KugaBungee extends Plugin {
                 "                 |___/         ");
         Kuga.getPlugin().out("Kuga : Start on the version v "+config.getString("kuga.version")+" .");
         Kuga.getPlugin().out("Kuga :           Github : https://github.com/EllSupreme/Kuga              ");
+        if (config.getBoolean("kuga.autoStart")) {
+            this.loadBalancing.start();
+        }
         super.onEnable();
     }
 

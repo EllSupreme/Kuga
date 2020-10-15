@@ -1,15 +1,13 @@
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/Version-0.0.1-%2376B900.svg?&style=for-the-badge&logo=&logoColor=white" />
-  <img alt="Stability" src="https://img.shields.io/badge/Stability-UnStable-%230071C5.svg?&style=for-the-badge&logo=&logoColor=white" />
-  <img alt="Updates" src="https://img.shields.io/badge/Current-Updated-%23ED1C24.svg?&style=for-the-badge&logo=&logoColor=white" />
+  <img alt="Stability" src="https://img.shields.io/badge/Stability-Stable-%230071C5.svg?&style=for-the-badge&logo=&logoColor=white" />
+  <img alt="Updates" src="https://img.shields.io/badge/Current-FINISH-%23ED1C24.svg?&style=for-the-badge&logo=&logoColor=white" />
   <img alt="Language" src="https://img.shields.io/badge/Lang-java-%23ED8B00.svg?&style=for-the-badge&logo=&logoColor=white" />
 </p>
 
 # Kuga
 
-🦺 Kuga is currently under development, so it is updated regularly. Some functions may not be 100% functional. Thank you for your understanding.
-
-Kuga is an application allowing to start servers and soon be able to manage them. All this in java and jedis.
+Kuga is an application to start servers in java.
 
 Server Version | Support
 ---------------|--------
@@ -23,10 +21,5 @@ Server Version | Support
 1.15           |   ✔
 
 ---
-
-**Todo**
-
-- All the database management part
-
 ## Developer
 - [Supreme](https://github.com/EllSupreme/)

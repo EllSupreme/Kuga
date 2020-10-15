@@ -12,9 +12,12 @@ public class Kuga {
     public List<KugaServer> servers = new ArrayList<>();
     private KugaServer kugaServer;
     public static Kuga instance;
-    private KugaBukkit kugaBukkit;
     private KugaBungee kugaBungee;
     private Gson gson = new GsonBuilder().create();
+
+    public Kuga() {
+        instance = this;
+    }
 
     public Gson getGSON() {
         return gson;
@@ -38,10 +41,6 @@ public class Kuga {
 
     public void newKugaServer(KugaServer kugaServer) {
         this.kugaServer = kugaServer;
-    }
-
-    public KugaBukkit getKugaBukkit() {
-        return kugaBukkit;
     }
 
     public KugaBungee getKugaBungee() {
