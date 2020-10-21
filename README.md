@@ -11,6 +11,7 @@ Kuga is an application to start servers in java.
 
 Server Version | Support
 ---------------|--------
+1.7            |   ✔
 1.8            |   ✔
 1.9            |   ✔
 1.10           |   ✔
@@ -19,6 +20,7 @@ Server Version | Support
 1.13           |   ✔
 1.14           |   ✔
 1.15           |   ✔
+1.16           |   ✔
 
 ---
 ## Developer
