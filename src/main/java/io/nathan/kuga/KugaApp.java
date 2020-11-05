@@ -1,7 +1,7 @@
-package io.supreme.kuga;
+package io.nathan.kuga;
 
-import io.supreme.kuga.manager.KugaManager;
-import io.supreme.kuga.server.ServerGame;
+import io.nathan.kuga.manager.KugaManager;
+import io.nathan.kuga.server.ServerGame;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;

@@ -1,8 +1,7 @@
-package io.supreme.kuga.manager;
+package io.nathan.kuga.manager;
 
-import io.supreme.kuga.Kuga;
-import io.supreme.kuga.manager.KugaManager;
-import io.supreme.kuga.server.ServerGame;
+import io.nathan.kuga.Kuga;
+import io.nathan.kuga.server.ServerGame;
 
 import java.io.IOException;
 

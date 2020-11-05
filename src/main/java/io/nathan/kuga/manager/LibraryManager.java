@@ -1,4 +1,4 @@
-package io.supreme.kuga.manager;
+package io.nathan.kuga.manager;
 
 import java.io.File;
 

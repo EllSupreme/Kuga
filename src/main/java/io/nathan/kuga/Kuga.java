@@ -1,8 +1,8 @@
-package io.supreme.kuga;
+package io.nathan.kuga;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import io.supreme.kuga.server.KugaServer;
+import io.nathan.kuga.server.KugaServer;
 
 import java.util.ArrayList;
 import java.util.List;

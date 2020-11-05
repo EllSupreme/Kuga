@@ -1,4 +1,4 @@
-package io.supreme.kuga.server;
+package io.nathan.kuga.server;
 
 public enum ServerGame {
 

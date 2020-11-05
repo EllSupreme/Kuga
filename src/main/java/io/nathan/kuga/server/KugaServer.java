@@ -1,4 +1,4 @@
-package io.supreme.kuga.server;
+package io.nathan.kuga.server;
 
 import java.util.List;
 import java.util.UUID;

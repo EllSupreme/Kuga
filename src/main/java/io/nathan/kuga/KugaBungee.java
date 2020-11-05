@@ -1,7 +1,7 @@
-package io.supreme.kuga;
+package io.nathan.kuga;
 
-import io.supreme.kuga.manager.LibraryManager;
-import io.supreme.kuga.manager.LoadBalancing;
+import io.nathan.kuga.manager.LibraryManager;
+import io.nathan.kuga.manager.LoadBalancing;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;

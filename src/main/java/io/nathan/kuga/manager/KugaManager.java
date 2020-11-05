@@ -1,6 +1,6 @@
-package io.supreme.kuga.manager;
+package io.nathan.kuga.manager;
 
-import io.supreme.kuga.server.ServerGame;
+import io.nathan.kuga.server.ServerGame;
 import net.md_5.bungee.Util;
 import net.md_5.bungee.api.ProxyServer;
 import org.apache.commons.io.FileUtils;
