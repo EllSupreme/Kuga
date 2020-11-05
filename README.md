@@ -24,4 +24,4 @@ Server Version | Support
 
 ---
 ## Developer
-- [Supreme](https://github.com/EllSupreme/)
+- [Nathan Guillaume](https://github.com/Nathan-Guillaume/)
